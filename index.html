@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Input</h1>
+    <input type="number" id="input" placeholder="Enter a number or enter 0 to stop.">
+    <button onclick="addSum()">Add</button>
+    <p id="sum">The sum is: 0</p>
+
+    <script>
+        let sum = 0;
+
+        function addSum() {
+            let input = document.getElementById("input");
+            let sumDisplay = document.getElementById("sum");
+            let number = Number(input.value);
+
+            if (number === 0 || sum + number > 100) {
+                return;
+            }
+
+            sum += number;
+            sumDisplay.innerHTML = "The sum is: " + sum;
+        }
+    </script>
+</html>
